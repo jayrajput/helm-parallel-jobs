@@ -1,0 +1,20 @@
+{{- range .Values.envs }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: process-item-{{ . }}
+  labels:
+    jobgroup: jobexample
+spec:
+  template:
+    metadata:
+      name: jobexample
+      labels:
+        jobgroup: jobexample
+    spec:
+      containers:
+      - name: c
+        image: busybox
+        command: ["sh", "-c", "echo Processing item {{ . }} && sleep 5"]
+      restartPolicy: Never
+{{- end }}
