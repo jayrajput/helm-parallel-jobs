@@ -1,4 +1,4 @@
 envs:
-  - POD1
-  - POD2
-  - POD3
+  - pod1
+  - pod2
+  - pod3
