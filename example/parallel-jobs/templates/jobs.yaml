@@ -17,4 +17,5 @@ spec:
         image: busybox
         command: ["sh", "-c", "echo Processing item {{ . }} && sleep 5"]
       restartPolicy: Never
+---
 {{- end }}
